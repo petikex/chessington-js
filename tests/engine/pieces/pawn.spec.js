@@ -16,6 +16,7 @@ describe('Pawn', () => {
             board.setPiece(Square.at(0, 0), pawn);
 
             const moves = pawn.getAvailableMoves(board);
+
             moves.should.deep.include(Square.at(1, 0));
         });
 
