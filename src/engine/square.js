@@ -15,4 +15,8 @@ export default class Square {
     toString() {
         return `Row ${this.row}, Col ${this.col}`;
     }
+    moveInDirection(x,y) {
+        return new Square(this.row + x, this.col + y);
+    }
+    onboard()  {return ((this.row >= 0) && (this.row <= 7) && (this.col >= 0) && (this.col <= 7))}
 }

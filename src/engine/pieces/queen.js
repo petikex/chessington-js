@@ -6,6 +6,7 @@ export default class Queen extends Piece {
     }
 
     getAvailableMoves(board) {
-        return new Array(0);
+        const queenDirections = [[1,0],[0,1],[-1,0],[0,-1],[1,1],[-1,1],[-1,1],[-1,-1]];
+        return findSquares(board, board.findPiece(this) ,queenDirections, true);
     }
 }

@@ -43,4 +43,9 @@ export default class Board {
             this.currentPlayer = (this.currentPlayer === Player.WHITE ? Player.BLACK : Player.WHITE);
         }
     }
+    squareIsEmpty(square) {
+        if (!square) return false;
+        if (!square.onboard) return false;
+        return (!this.getPiece(square));
+    }
 }

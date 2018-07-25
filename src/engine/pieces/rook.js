@@ -1,4 +1,5 @@
 import Piece from './piece';
+import findSquares from './piece'
 
 export default class Rook extends Piece {
     constructor(player) {
@@ -6,6 +7,7 @@ export default class Rook extends Piece {
     }
 
     getAvailableMoves(board) {
-        return new Array(0);
+        const rookDirections = [[1,0],[0,1],[-1,0],[0,-1]];
+        return findSquares(board, board.findPiece(this) ,rookDirections, true);
     }
 }

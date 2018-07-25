@@ -1,4 +1,5 @@
 import Piece from './piece';
+import findSquares from './piece'
 
 export default class Knight extends Piece {
     constructor(player) {
@@ -6,6 +7,7 @@ export default class Knight extends Piece {
     }
 
     getAvailableMoves(board) {
-        return new Array(0);
+        const kinghtDirections = [[2,-1],[-2,-1],[-2,1],[2,1],[1,2],[1,-2],[-1,2],[-1,-2]];
+        return findSquares(board, board.findPiece(this) ,kinghtDirections);
     }
 }

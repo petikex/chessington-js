@@ -6,6 +6,7 @@ export default class Bishop extends Piece {
     }
 
     getAvailableMoves(board) {
-        return new Array(0);
+        const bishopDirections = [[1,1],[-1,1],[-1,1],[-1,-1]];
+        return findSquares(board, board.findPiece(this) , bishopDirections, true);
     }
 }
